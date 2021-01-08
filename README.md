@@ -1,2 +1,0 @@
-# home
-nimiq.cafe pages

@@ -1,0 +1,69 @@
+---
+layout: post
+title: 'Nimiq – Une longueur d’avance : Keyguard et Hub'
+date: 2019-12-14 09:19:22.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Communauté
+- Guide
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _heateor_sss_meta: a:2:{s:7:"sharing";i:0;s:16:"vertical_sharing";i:0;}
+  twitterCardType: summary
+  _thumbnail_id: '2608'
+  _elementor_controls_usage: a:0:{}
+  _xmlsf_image_attached: a:3:{s:3:"loc";s:58:"https://nimiq.cafe/wp-content/uploads/2019/12/Serrure.jpeg";s:5:"title";s:7:"Serrure";s:7:"caption";s:0:"";}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2019/12/14/nimiq-une-longueur-davance-keyguard-et-hub/"
+---
+<p>La dernière fois, nous avons parlé de la façon dont Nimiq tire partie un système de procédé de consensus rapide (Quicksync) et de nœuds sur navigateur pour créer un protocole plus décentralisé et plus sécurisé tout en facilitant l'utilisation et l'intégration dans les sites web et applications web existantes.</p>
+<p>Aujourd'hui, le sujet portera davantage sur la façon dont Nimiq parvient à offrir une expérience utilisateur aussi fluide et sur les opportunités qu'elle offre aux utilisateurs, aux marchands et aux développeurs. Dans ce but, nous allons essayer d'expliquer deux éléments constitutifs de l'écosystème actuel de Nimiq qui sont le Keyguard et le Hub.</p>
+<p>Qu'est-ce que le Keyguard ? Eh bien, comme son nom l'indique : c'est une application qui stocke vos clés privées localement et en toute sécurité dans votre navigateur. Mais attendez, des clés privées ? Comment ça marche déjà ?</p>
+<p><img class=" wp-image-2609 alignleft" src="{{ site.baseurl }}/assets/2019/12/trains-1024x683.jpeg" alt="" width="399" height="266" /></p>
+<p>Imaginons une blockchain (la base de données elle-même) comme une gare ferroviaire publique : maintenant, supposons que chacun puisse construire une copie identique de cette gare ferroviaire publique et l'exploiter lui-même, c'est exactement ce qu'est un nœud sur la chaine de bloc. Répétez ce processus plusieurs fois, connectez toutes ces gares ensemble avec des rails (Internet) et faites rouler les trains les uns entre les autres (les données circulant dans les deux sens), voilà : vous avez un réseau blockchain.</p>
+<p>Bien sûr, dans notre cas, un train ne transporterait pas des passagers ou des marchandises mais des messages (et dans le cas de Nimiq : transactions) destinés à d'autres gares pour qu'elles puissent toutes rester synchronisées dans le temps.<br />
+Mais attendez, si tout le monde a accès à une copie et peut gérer sa propre base de données, qu'est-ce qui empêche les gens de trifouiller le solde de mon compte ?</p>
+<p>C'est à ce moment que l'équivalent blockchain d'une consigne a. Dans ce cas, le casier serait votre adresse où se trouvent les fonds. Comme nous l'avons dit, toutes les gares sont strictement identiques et ont exactement la même salle de consigne avec le même contenu dans chacune d'entre elles.</p>
+<p>Le fait est que tout le monde peut voir le contenu des casiers, de sorte que les manipulations dans une station seraient immédiatement évidentes. Seule la personne ayant accès à la clé d'un casier (vous) peut l'ouvrir et déplacer son contenu, cette clé est appelée la "clé privée". Avec Nimiq, votre clé privée peut se présenter sous la forme de 24 mots ou d'un fichier de connexion que vous avez obtenu lors de la création de votre compte. Et c'est pourquoi les gens dans l'espace crypto sont si prudents quant à la façon dont ils gèrent leurs clés privées : si quelqu'un accède à vos clés, il peut faire ce qu'il veut avec vos fonds, mais ne nous égarons pas trop.</p>
+<p>Une clé privée fonctionne de telle manière qu'elle vous permet de "signer" des transactions, une signature ici est en fait une preuve cryptographique montrant que la personne qui envoie la transaction ou message est bien le propriétaire de l'adresse.<br />
+La signature, une fois diffusée dans le cadre de la transaction, permet au reste du réseau de valider le changement de solde dans le grand livre/base de données sur la chaîne de blocs.</p>
+<p>Avec Nimiq, les clés sont prises en charge par le Keyguard, c'est une application qui stocke et manipule vos clés dans le navigateur d'une manière sécurisée. De par sa conception, il est séparé du reste de l'écosystème afin de réduire la surface d'attaque.</p>
+<p>Pour cela il est écrit en JavaScript simple sans dépendances sur les frameworks et les bibliothèques pour éviter les failles de sécurité provenant de telles dépendances, mais conduit également à une base de code plus petite qui est bien auditée avec un soin supplémentaire.</p>
+<p>Cela dit, n'est-il pas encore un peu dangereux de faire interagir le Keyguard directement avec un site web ou une application ? C'est possible en effet... mais les développeurs de Nimiq y ont pensé !</p>
+<p><img class="aligncenter size-large wp-image-2611" src="{{ site.baseurl }}/assets/2019/12/Hub-1024x287.png" alt="" width="1024" height="287" /></p>
+<p>C'est à ce moment que le <strong>Hub Nimiq</strong> entre en jeu.<strong> Le Hub est une seconde couche logicelle qui sert d'interface entre le Keyguard et le reste du monde</strong>, c'est l'endroit où toutes les données de vos comptes sont stockées (sans la clé privée) et qui interagit directement avec les autres applications (comme une extension WordPress ou Nimipay). Chaque fois que vous souhaitez importer/exporter un compte ou envoyer une transaction, alors seulement le Hub demandera une signature au Keyguard.</p>
+<p>En fait, vous pouvez le vérifier par vous-même : lorsque vous allez dans le Safe sur nimiq.com pour, disons, vérifier votre solde, interagir avec votre compte, voir l'historique de vos transactions, etc... toutes les données affichées sont enregistrées dans le Hub.</p>
+<p>[caption id="attachment_2612" align="aligncenter" width="485"]<img class="size-full wp-image-2612" src="{{ site.baseurl }}/assets/2019/12/Keyguard.jpeg" alt="" width="485" height="619" /> L'interface utilisateur du Keyguard[/caption]</p>
+<p>&nbsp;</p>
+<p>La petite fenêtre qui s'ouvre vous demandant votre mot de passe lors de l'envoi d'une transaction ou de l'importation/exportation d'un compte : C'est le Keyguard.<br />
+Maintenant que ces notions sont, nous l'espérons, plus claires (en dépit d'une affreuse analogie avec les trains !), il est temps d'exposer pourquoi ces deux composants sont extrêmement puissants :</p>
+<p>&nbsp;</p>
+<ul>
+<li>C'est, du point de vue de l'utilisateur, <strong>la façon la plus simple de payer quelque chose en ligne</strong>. Vous voulez regarder du contenu derrière un paywall ? Faire un don à quelqu'un ? Eh bien, cliquez sur un bouton sur ce site Web, le Keyguard apparait, tapez votre mot de passe et vous avez terminé. Pas besoin de vous "doxxer" à une entité centralisée comme PayPal, d'entrer votre numéro de carte de crédit sur un site web un peu louche, de copier/coller une adresse crypto entre les fenêtres etc... En réalité, vous n'auriez probablement même pas besoin de vous enregistrer en premier lieu (pour en savoir plus lisez le paragraphe suivant). Cliquez simplement sur un bouton d'une page Web, tapez un mot de passe et c'est tout !</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>Vous souvenez-vous quand on parlait de signatures ? Ells servent à authentifier votre propriété d'une adresse et des fonds qui s'y trouvent, mais ils peuvent aussi servir à vous identifier.<strong> Cela rend obsolète l'enregistrement traditionnel par mail/mot de passe</strong>, pensez à un équivalent comptes Google ou Facebook mais décentralisés et sans sociétés de type "big brother" pillant vos données personnelles.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>Du point de vue d'un commerçant ou d'un créateur de contenu, c'est un moyen très intéressant de recevoir des paiements combinés avec <a href="https://nimiq.cafe/2019/03/06/nimiq-rend-le-fiat-compatible-avec-la-blockchain/">OASIS</a>, d'abord parce qu'il enlève une grosse charge financière : <strong>vous n'avez pas à traiter avec un processeur de paiement comme PayPal ou, dans le cas des crypto, BitPay et ses conditions/frais.<br />
+</strong>Combinez cela avec les frais de transaction potentiellement bas de Nimiq 2.0 et vous découvrirez tout un univers de possibilités de monétisation en ligne par le biais de micro-transactions. Dans le cas de NimiqID, cela pourrait même leur permettre d'arrêter totalement de s'occuper de l'hébergement avec mot de passe. Ce serait moins cher et plus sûr.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>Pour mettre le clou final dans le cercueil des fournisseurs de paiement centralisés, les développeurs disposent d'une API leur permettant d'utiliser les fonctionnalités du Hub Nimiq. <strong>Cela signifie qu'il n'est pas nécessaire de construire des solutions maison à partir de zéro pour interagir avec la blockchain ou héberger un nœud pour fournir des services.</strong> Couplé à ce qui a été dit dans le dernier fil de discussion et vous vous retrouvez avec quelque chose de beaucoup plus léger à gérer et à intégrer pour les développeurs par rapport aux autres cryptomonnaies.</li>
+</ul>
+<p>C'est pour le Keyguard et le Hub, on espère que vous aurez appris quelque chose et que vous comprendrez mieux pourquoi nous sommes tant excités par les perspectives d'utilisation du Nimiq.</p>
+<p>&nbsp;</p>

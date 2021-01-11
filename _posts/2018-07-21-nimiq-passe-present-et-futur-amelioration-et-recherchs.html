@@ -1,0 +1,60 @@
+---
+layout: post
+title: 'Nimiq : Passé, présent et futur – Améliorations et Recherches'
+date: 2018-07-21 08:01:01.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Non classé
+tags: []
+meta:
+  _thumbnail_id: '1279'
+  _wpas_done_all: '1'
+  tc-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1279";s:11:"_thumb_type";s:5:"thumb";}
+  _publicize_twitter_user: "@Nimiq_France"
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: ''
+  layout_key: ''
+  post_slider_check_key: '0'
+  fpu-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1279";s:11:"_thumb_type";s:5:"thumb";}
+  _yoast_wpseo_content_score: '30'
+  _xmlsf_image_attached: a:3:{s:3:"loc";s:67:"https://nimiq.cafe/wp-content/uploads/2018/12/NimiqArchitecture.png";s:5:"title";s:17:"NimiqArchitecture";s:7:"caption";s:0:"";}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2018/07/21/nimiq-passe-present-et-futur-amelioration-et-recherchs/"
+---
+<p><em>Ci-dessous une traduction du nouvel article officiel trouvable <a href="https://medium.com/nimiq-network/nimiq-past-present-future-413378d8a71b">ici.</a></em></p>
+<p>Nous avons récemment conclu deux hackathons sur le Nimiq, en commençant par un hackathon sur le noyau de façon à le porter sur Rust pour des performances accrues, suivi par "front-end" revisitant le Nimiq Keyguard pour une sécurité accrue.</p>
+<h2>Le noyau du Nimiq en Rust</h2>
+<p>JavaScript sur Node.js avec une base de code partagée entre le client et le serveur a permis un développement rapide de Nimiq. Bien que nous continuerons à soutenir la plate-forme populaire Node.js, le portage du noyau sur Rust est un investissement pour l'avenir, car Rust offre plusieurs avantages évidents :</p>
+<ul>
+<li>Support natif pour l'exécution simultanée de code, véritable multithreading sur le CPU.</li>
+<li>Rust compile en WebAssembly, donc les nœuds du navigateur en bénéficieront également.</li>
+<li>Performances équivalentes à celles de C et C++.</li>
+<li>Mémoire sécurisée comme Java</li>
+</ul>
+<p>Rust combine le meilleur des deux mondes : la sécurité de la mémoire et la haute performance. Plus précisément, un grand nombre de problèmes potentiels communs à C, C+++ ou communs aux langages de script tels que JavaScript peuvent être vérifiés statiquement et donc évités au moment de la compilation. L'absence de récupérateur de mémoire améliore les performances, tandis qu'un modèle de mémoire plus explicite le rend moins sujet aux fuite de mémoire. En même temps, Rust est encore un langage assez jeune et donc plus flexible et plus agile mais aussi plus évolutif et bien sur open source comme l'assurent des sponsors solides comme Mozilla.</p>
+<p>Bien que la puissance de minage ne sera pas augmentée en tant que telle, on s'attend à une augmentation significative de la stabilité du hashrate car la performance globale du matériel sera fortement améliorée. Plus important encore, le facteur limitant du client actuel est le nombre de transactions par seconde car les implémentations sont liées à un seul coeur pour tout ce qui n'est pas lié au minage - Rust avec l'exécution native de code concurrent supprimera ce goulot d'étranglement. De plus, la pile de logiciels est beaucoup plus petite, le code fonctionne directement sur le CPU, tous les cœurs peuvent travailler sur toutes les tâches en parallèle en profitant de toutes les fonctionnalités matérielles.</p>
+<p>En bref, tandis que Node.js est quand même une plate-forme puissante, Rust lui compile le code natif, ce qui permet d'exploiter toute la puissance de la machine.</p>
+<p>L'implémentation est toujours en cours, les primitives cryptographiques et des composants multiples ont été portés, mais pas encore complètement intégrés. Comment l'équipe en charge du noyau considère la tâche jusqu'à présent ? "Rafraîchissante" !</p>
+<h2>Websockets et nœuds "seed" communautaires</h2>
+<p>Sur la base des statistiques de connexion de nos nœuds "seed", près de 95% des nœuds du "backbone" fonctionnent en configuration "dumb", supportant ainsi notre réseau avec une puissance de hachage mais ne supportant pas la communication entre les nœuds (voir notre article sur la performance du réseau pour plus de détails). Avec la version 1.2.0 de Nimiq Core, la prise en charge des sockets Web a été ajoutée, ce qui permet aux nœuds de communiquer entre eux via des sockets Web ordinaires et leur IP publique, éliminant ainsi la nécessité de configurer un nom de domaine et un certificat. Bien que cela n'ait pas encore été annoncé publiquement, nous voyons déjà 500 nœuds utiliser cette nouvelle fonctionnalité et les courbes des statistiques du réseau suggèrent une adoption rapide à l'avenir. Nous sommes confiant qu'avec cette nouvelle configuration, certains des nœuds fonctionnant actuellement en mode "dumb" pourront utiliser leur adresse IP publique et ainsi commencer à supporter la communication au sein du réseau. De plus, avec la version 1.2.0, il est possible de configurer une limite d'acceptation des connexions pour les nœuds "dumb".</p>
+<p><strong><a href="https://github.com/nimiq-network/core/releases/tag/v1.2.0">Nous encourageons vivement tous les utilisateurs d'un nœud "full" à mettre à niveau.</a></strong></p>
+<p>Avec la version 1.2.1, nous prévoyons la sortie des nœuds seed communautaires. Actuellement, nous travaillons à l'hébergement de la liste des nœuds seed ainsi qu'à l'organisation d'un accès sécurisé pour les membres de la communauté. De plus, l'augmentation du nombre de nœuds seed Nimiq de 8 à 20 sera intégrée dans le code source. Les nœuds seed sont distribués à l'échelle mondiale, ce qui minimise les risques et améliore en même temps le temps de réponse des nœuds dans le monde entier. En fait, les nouveaux nœuds seed sont déjà utilisés par le réseau, ce qui démontre que l'algorithme à propagation hautement aléatoire fonctionne très bien.</p>
+<h2>Keyguard et Account Manager</h2>
+<p>L'objectif ultime de la révision du Keyguard de Nimiq est de supprimer toutes les dépendances logicielles externes, ce qui lui permet d'atteindre un niveau de révision similaire à celui du code du noyau.</p>
+<p>En analysant le code source et la structure actuelle du Keyguard de Nimiq, nous nous sommes rendu compte qu'une architecture plus fine permettra une plus grande séparation des préoccupations. Ce qui nous a conduit à cette nouvelle architecture :</p>
+<p>Dans cette nouvelle architecture, la responsabilité de Nimiq Keyguard est de servir de magasin de clés basé, c'est-à-dire un logiciel hautement sécurisé dédié à la protection de vos clés, et ne faisant rien d'autre que cela afin de minimiser la complexité et de maximiser la sécurité.</p>
+<p>En terme d'expérience et de protection pour les utilisateurs le Keyguard, il y aura le toute nouveau "Nimiq Account Manager" (Gestionnaire de comptes Nimiq) où les clés du Keyguard de Nimiq ou de votre Ledger Nano S s'accompagne d'étiquettes et de permissions définies par l'utilisateur concernant les applications tierces.</p>
+<p><img class="aligncenter size-full wp-image-1351" src="{{ site.baseurl }}/assets/2018/07/NimiqArchitecture.png" alt="" width="642" height="171" /></p>
+<p>Le Nimiq Account Manager sera la nouvelle interface commune qui orchestrera et protégera les principales interactions liées au stockage des clés.</p>
+<p>Pendant le hackathon, nous avons fait des progrès majeurs vers la réécriture de Nimiq Keyguard en JavaScript, HTML et CSS, en supprimant toutes les dépendances externes, ce qui nous a permis d'obtenir une révision complète du code et donc de le préparer à être ajouté au programme de primes sur HackerOne. Parallèlement, nous avons commencé à planifier et à concevoir le Nimiq Account Manager et nous ferons le point sur les progrès réalisés, le cas échéant.</p>
+<p>D'autre part, le travail sur le Safe s'est poursuivi et afin d'accroître les possibilités d'interactions sociales et la convivialité, une fonction de liste de contacts facile à utiliser a été ajoutée. Les contributeurs de la première heure seront également heureux d'apprendre qu'une nouvelle fonction de paiement est maintenant publiée et disponible pour les montants verrouillés.</p>
+<p>Ceci conclut notre série spéciale de blogs. Restez à l'écoute pour d'autres mises à jour ainsi que l'un des prochains messages prévus qui portera sur la transparence opérationnelle. Suivez Nimiq sur Twitter, Discord et Telegram pour être informé des mises à jour sur Nimiq Core, Keyguard, Safe et Wallet.</p>

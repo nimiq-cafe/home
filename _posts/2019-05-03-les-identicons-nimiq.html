@@ -1,0 +1,158 @@
+---
+layout: post
+title: Les Identicons Nimiq
+date: 2019-05-03 09:32:07.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Officiel
+tags: []
+meta:
+  _thumbnail_id: '2056'
+  _edit_last: '1'
+  tc-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"2056";s:11:"_thumb_type";s:5:"thumb";}
+  layout_key: ''
+  post_slider_check_key: '0'
+  fpu-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"2056";s:11:"_thumb_type";s:5:"thumb";}
+  _heateor_sss_meta: a:2:{s:7:"sharing";i:0;s:16:"vertical_sharing";i:0;}
+  _xmlsf_image_attached: a:3:{s:3:"loc";s:59:"https://nimiq.cafe/wp-content/uploads/2019/05/Identicon.png";s:5:"title";s:9:"Identicon";s:7:"caption";s:0:"";}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2019/05/03/les-identicons-nimiq/"
+---
+<p><!-- wp:paragraph --></p>
+<p><em>Ci-dessous une traduction du nouveau billet officiel trouvable <a href="https://medium.com/nimiq-network/nimiq-identicons-8789b68e1668">ici</a>.</em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Un moyen de se protéger contre les détournement de presse-papiers</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le 8 février 2019, Lukas Stefanko a annoncé que <a href="https://www.welivesecurity.com/2019/02/08/first-clipper-malware-google-play/" rel="noreferrer noopener" target="_blank">WeLiveSecurity.com</a> avait identifié le premier cas de malware “clipper” sur Google Play. Il n’est pas surprenant que ce malware nouvellement découvert ait été conçu pour dérober des cryptomonnaies.  Nimiq inclut dans son design un mesure pour les contrer les “identicons”.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Un clone de Metamask exploitant le copier-coller</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le logiciel malveillant découvert sur le Google Store <a href="https://bitcoinist.com/google-play-store-metamask-malware/" rel="noreferrer noopener" target="_blank">usurpait l’identité de Metamask</a> pour voler le crypto d’un utilisateur de deux façons&nbsp;:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>En obtenant les clés privées des utilisateurs et en prenant le contrôle du portefeuille de la victime.</li>
+<li>En remplaçant une adresse de portefeuille BTC ou ETH copiée dans un presse-papiers par une adresse contrôlée par le pirate.</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:image {"linkDestination":"custom"} --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/1*Y3qQlICqcvA-RXGRh3KaHw.png" alt="" /><br />
+<figcaption>L’extension pour navigateur Metamask installée par <a href="https://www.newsbtc.com/2018/11/05/ethereum-wallet-metamask-achieves-milestone-of-1-3-million-users-wild-success/" rel="noreferrer noopener" target="_blank">1,3 millions d’utilisateurs</a></figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>La chose effrayante à propos du vol de crypto à travers le détournement du presse-papiers est qu’il exploite le comportement de l’utilisateur. Avec n’importe quelle cryptomonnaie, les adresses de portefeuilles sont de très longues et difficiles à mémoriser séries de chiffres et de lettres. Pour simplifier les choses, la plupart des utilisateurs de crypto copient et collent l’adresse du destinataire lors du traitement des transactions.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Le piratage du presse-papiers&nbsp;: comment ça marche&nbsp;?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>La méthode de piratage fonctionne en surveillant les presse-papiers des ordinateurs infectés pour détecter les adresses de cryptomonnaies. Essentiellement, si le logiciel malveillant détecte une adresse crypto dans le presse-papiers de l’utilisateur, il l’échange contre une adresse appartenant aux voleurs.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Dans la plupart des cas, les pirates du presse-papiers crypto sont limités à quelques centaines de milliers d’adresses. Cependant, mi-2018, <a href="https://www.bleepingcomputer.com/news/security/clipboard-hijacker-malware-monitors-23-million-bitcoin-addresses/" rel="noreferrer noopener" target="_blank">BleepingComputer</a> a découvert un logiciel malveillant surveillant 2,3 millions d’adresses de porte-monnaie cryptos.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>La vérité est que la plupart des utilisateurs ne savent pas qu’ils ont été infectés par des logiciels malveillants touchant le presse-papiers avant qu’il ne soit trop tard. Le logiciel malveillant s’exécute simplement en arrière-plan et rien n’indique qu’il est même là.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Comment les I<em>denticons</em> Nimiq peuvent-elles combattre le détournement de presse-papiers&nbsp;?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Pour ceux qui ne le savent pas, une <em>identicon</em> est “une représentation visuelle d’un <em>hash</em>… qui sert à identifier un utilisateur dans un système informatique,  comme une forme d’avatar tout en protégeant la vie privée des utilisateurs”. Avec Nimiq, des identifiants virtuels uniques sont attribués à chaque adresse de compte (la terminologie utilisée par Nimiq, équivalente à “adresse de portefeuille”) et visent à rendre chaque adresse identifiable en un coup d’œil. Basé sur <a rel="noreferrer noopener" href="https://robohash.org/" target="_blank">Robohash</a>, le défi que Nimiq a dû relever lors du développement de ses<em> identicons</em> était de s’assurer qu’elles soient exceptionnellement reconnaissables tout en offrant un haut niveau de variabilité pour permettre la génération d’une <em>identicon</em> différent pour chaque adresse compte Nimiq.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>En effet, les <em>identicon</em>s sont utilisées pour aider à visualiser les adresses Ethereum dans des portefeuilles populaires comme MyEtherWallet. Cependant, ces types d’<em>identicons</em> s’adressent davantage à un public avide de technologie et les internautes typiques ne les trouvent souvent pas reconnaissables, reconnaissables ou mémorisables.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/1*yztIrjHzH77KHdI0Rfz5VA.png" alt="" /><br />
+<figcaption>Identicons d’adresses Ethereum</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>C’est un gros problème quand on considère la fonction prévue des <em>identicons</em>, comme l’a énoncé le créateur du concept&nbsp;:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>“De mon point de vue, trop de ce que nous lisons sur le web sont des informations textuelles ou numériques qui ne sont pas faciles à distinguer d’un coup d’œil lorsqu’elles sont mélangées ensemble. Donc je pense que l’ajout d’identifiants visuels rendra l’expérience de l’utilisateur beaucoup plus agréable.”</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>- Don Park, créateur du concept d’identicon</strong></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/1*e6TdbgXtJn7X3tAiemmpmA.jpeg" alt="" /><br />
+<figcaption>Identicons des adresses&nbsp;Nimiq</figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le facteur clé du succès est que les Nimiq Identicons sont très facilement reconnaissables et mémorisables, ce qui permet aux utilisateurs d’identifier facilement différentes adresses de comptes. Ainsi, lorsque vous essayez de confirmer à vos amis qu’ils envoient bien à l’adresse du compte prévu&nbsp;:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Au lieu de répéter l’adresse de votre compte Nimiq NQ57 KNAL 9PG2ATVG EBDDD 6SMG HUHD M959 SG1B vous pouvez plutôt dire&nbsp;:</li>
+<li>“C’est la licorne orange avec des yeux verts et des antennes.”</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Cela facilite considérablement la vérification des adresses de compte, les humains sont tout simplement meilleurs pour décrire des représentation visuelles, plutôt qu’une longue chaîne de lettres et de chiffres. Nous pensons également que cette façon de vérifier les adresses de compte est plus amusante.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/1*L0Pe-UbwUj9bv8dz3OgtuQ.png" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Si un utilisateur de Nimiq fait l’objet d’un piratage du presse-papiers et que le logiciel malveillant remplace l’adresse Nimiq dans le presse-papiers par une adresse de compte contrôlée par l’attaquant, l’utilisateur collant cette adresse frauduleuse dans le champ d’envoi verra l’<em>identicon</em> s’afficher immédiatement. Si vous envoyez du NIM à un ami et que vous voyez un <em>identicon</em> différente de celle habituelle, alors vous savez instantanément que quelqu’un a lancé une attaque sur votre presse-papiers (ou que vous avez fait une erreur de frappe ou de copier-coller vous-même). Si vous envoyez à quelqu’un que vous ne connaissez pas, vous pouvez simplement lui demander&nbsp;: “Êtes-vous le bonhomme orange, avec le ballon de foot, les pinces de homard bleu et le fond bleu&nbsp;?</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:quote --></p>
+<blockquote class="wp-block-quote"><p>Vous voulez voir certaines des Identicons de Nimiq par vous-même&nbsp;? <a href="https://nimiq.github.io/iqons" rel="noreferrer noopener" target="_blank">Jetez un coup d’oeil&nbsp;ici.</a></p>
+</blockquote>
+<p><!-- /wp:quote --></p>
+<p><!-- wp:paragraph --></p>
+<p>Il y a également un effort continu pour améliorer la convivialité et la vérification au premier coup d’oeil pour l’utilisateur, en ajoutant un nom suggéré à chaque <em>identicon</em>. Un grand merci au développeur communautaire Terorie pour sa contribution au <em>naming scheme</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Il est vrai que les attaques de piratage du presse-papiers peuvent être protégées contre le piratage par une double ou triple vérification de l’adresse du destinataire avant envoi. Cependant, cela rend les choses plus compliquées et prend plus de temps, et la plupart des gens ont confiance que leur ordinateur collera ce qu’ils ont copié. C’est pourquoi la reconnaissance instantanée et l’énorme variation des Nimiq Identicons peuvent aider à protéger les utilisateurs de NIM des tentatives de détournement de presse-papiers d’une manière simple et directe.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>La grande diversité des Identicons Nimiq</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/1*xjgFZLb4UogTklx1VLFpLQ.png" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Chaque Identicon Nimiq possède cinq éléments différents&nbsp;: une base, un visage, des côtés, un corps, un sommet et une couleur de fond. Chaque élément a une couleur distinctive. Au total, les <em>identicons</em> sont constituées d’une combinaison de&nbsp;:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>21 bases</li>
+<li>21 visages</li>
+<li>21 côtés</li>
+<li>21 sommets</li>
+<li>8 couleurs pour les pièces</li>
+<li>9 couleurs de corps</li>
+<li>10 couleurs de fond</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Cela signifie qu’il y a 10 * 9 * 8 * 2¹⁴ = 140 026 320 identicons différentes qui peuvent être générées. Cela signifie que Nimiq est capable de générer plus de 100 millions d’identicons hautement différenciées et immédiatement reconnaissables.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Mot de la&nbsp;fin</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>La fausse application MetaMask dans la boutique Google Play montre à quel point les mauvais acteurs évoluent et changent leurs méthodes pour dérober des cryptos en essayant d’exploiter le comportement commun des utilisateurs. Nous espérons que cet exemple vous aidera à mieux comprendre la valeur de Identicons Nimiq et pourquoi il est utile de posséder une méthode permettant aux utilisateurs de reconnaître facilement les adresses. Dans le prolongement de cette fonctionnalité de Nimiq, nous sommes impatients de déployer prochainement le nouveau système de nommage et de le partager avec la communauté. Si vous n’avez pas encore d’Identicons Nimiq et que vous souhaitez choisir le vôtre dès maintenant, vous pouvez le faire en 30 secondes en créant un <a href="https://getsome.nimiq.com/" rel="noreferrer noopener" target="_blank">compte Nimiq ici</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Pura Vida<br /><strong>Équipe Nimiq</strong></p>
+<p><!-- /wp:paragraph --></p>

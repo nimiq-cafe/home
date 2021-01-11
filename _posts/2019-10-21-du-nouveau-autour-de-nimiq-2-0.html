@@ -1,0 +1,42 @@
+---
+layout: post
+title: Du nouveau autour de Nimiq 2.0
+date: 2019-10-21 14:59:13.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- News
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _heateor_sss_meta: a:2:{s:7:"sharing";i:0;s:16:"vertical_sharing";i:0;}
+  twitterCardType: summary
+  _thumbnail_id: '2577'
+  _elementor_controls_usage: a:0:{}
+  _xmlsf_image_attached: a:3:{s:3:"loc";s:59:"https://nimiq.cafe/wp-content/uploads/2019/10/Albatross.png";s:5:"title";s:9:"Albatross";s:7:"caption";s:0:"";}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2019/10/21/du-nouveau-autour-de-nimiq-2-0/"
+---
+<p>La fin d'année approche et Team Nimiq commence doucement à lever le voile sur les améliorations prévues pour le protocole en 2020, de nouveaux ajouts sont ainsi apparus sur le <em><a href="https://www.nimiq.com/whitepaper/">whitepaper</a></em><a href="https://www.nimiq.com/whitepaper/"> du site officiel.</a></p>
+<h2>Albatross confirmé et étoffé</h2>
+<p>L'algorithme, développé en collaboration avec Trinkler Software, a été confirmé comme étant la future méthode de consensus à preuve d'enjeu (PoS) de Nimiq. <em><a href="https://nimiq.cafe/2019/03/10/collaboration-de-recherche-albatross/">Albatross</a></em> devrait permettre d'approcher le maximum théorique de transactions par seconde sur une chaîne unique, de manière concrète l'algorithme permettrait d'atteindre ainsi plus de 1000 transactions à la seconde.</p>
+<p>Pour rappel : les nœuds responsables de la production de nouveaux blocs sont appelés <em>validateurs</em>. Toute personne détenant des NIM peut se porter volontaire en tant que validateur en déposant une mise en garantie (ndlr : "stake" en anglais), cette dernière pouvant être confisquée en cas de tentatives de triche (ndlr : “slashed”) et redistribuée aux participants honnêtes.</p>
+<p><img class="aligncenter size-large wp-image-2576" src="{{ site.baseurl }}/assets/2019/10/Albatross-1024x317.png" alt="" width="1024" height="317" /></p>
+<p>La production de blocs dans <em>Albatross</em> est divisée en "époques".<br />
+Comme le montre la figure ci-dessus, chaque époque est constituée d’un nombre constant de <em>microblocs</em> (quatre <em>microblocs</em> dans l’exemple ci-dessous) suivis d’un <em>macrobloc</em>. Les <em>microblocs</em> contiennent les transactions et possèdent un seul producteur de blocs choisi au hasard parmi les validateurs. Alors que n’importe qui peut se porter volontaire pour devenir un validateur, l’ensemble réel de validateurs dans une époque donnée (les validateurs <strong>actifs</strong>) est choisi via le <em>macrobloc</em> de l’époque précédente.</p>
+<p>À ce propos Team Nimiq a également informée être en train d'étudier l'implémentation de <a href="https://arxiv.org/abs/1906.05132">Handel</a>, un nouveau protocole d'agrégation des signatures qui augmenterait encore la rapidité de validation des blocs en augmentant drastiquement la vitesse de partage des votes au sein du réseau entre les différents nœuds.</p>
+<p>Enfin Albatross introduira un nouveau type de nœud appelé "nœuds historiques" (<em>History Nodes</em>), ces derniers contenant l'historique de la totalité des macroblocs et des microblocs ayant été produits tandis que les nœuds complets (<em>Full Nodes</em>) ne se contenteraient que d'héberger l'ensemble des macroblocs.</p>
+<h2>Une nouvelle méthode de compression pour un nouveau consensus</h2>
+<p>L'une des grandes nouveautés introduites par du le lancement du Nimiq était l'usage unique du <em>NiPoPoW</em>, un système de preuve cryptographique permettant d'obtenir l'état le plus récent du registre de la blockchain en ne téléchargeant que quelques ko, cette méthode de compression permet d'héberger un nœud directement dans le navigateur et ce en quelques secondes.</p>
+<p>Avec le passage à la preuve d'enjeu, Nimiq passera à un nouveau système de compression basé sur l'algorithme de preuve zk-SNARK et à un nouveau modèle de validation cryptographique des soldes avec un procédé hybride entre <em>Account Tree</em> et <em>UTXO</em>. Le but ici est de permettre un consensus avec la blockchain encore plus rapide grâce à une preuve cryptographique de taille constante de seulement quelques kilooctets.</p>
+<h2>Et d'ici la fin d'année ?</h2>
+<p>Bien que la plupart de ces améliorations soient attendues pour 2020, la fin de l'année devrait voir <em>Albatross</em> se dévoiler dans un testnet public tandis que le lancement d'<a href="https://nimiq.cafe/2019/03/06/nimiq-rend-le-fiat-compatible-avec-la-blockchain/">OASIS</a>, le framework devant rendre la monnaie scripturale compatible avec la blockchain, est toujours prévu pource trimestre.</p>

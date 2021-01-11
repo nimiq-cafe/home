@@ -1,0 +1,153 @@
+---
+layout: post
+title: 'Collaboration de recherche : Albatross'
+date: 2019-03-10 18:42:44.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Officiel
+tags: []
+meta:
+  _thumbnail_id: '1875'
+  _edit_last: '1'
+  tc-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1875";s:11:"_thumb_type";s:5:"thumb";}
+  layout_key: ''
+  post_slider_check_key: '0'
+  fpu-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1875";s:11:"_thumb_type";s:5:"thumb";}
+  _heateor_sss_meta: a:2:{s:7:"sharing";i:0;s:16:"vertical_sharing";i:0;}
+  _wp_page_template: default
+  twitterCardType: summary
+  _xmlsf_image_attached: a:3:{s:3:"loc";s:59:"https://nimiq.cafe/wp-content/uploads/2019/03/Albatross.png";s:5:"title";s:9:"Albatross";s:7:"caption";s:0:"";}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2019/03/10/collaboration-de-recherche-albatross/"
+---
+<p><!-- wp:paragraph --></p>
+<p><em>Ci-dessous une traduction du nouveau billet officiel trouvable <a href="https://medium.com/nimiq-translations/collaboration-en-mati%C3%A8re-de-recherche-albatros-6fb35f741e1b">ici.</a></em></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Team <a href="https://nimiq.com/" target="_blank" rel="noreferrer noopener">Nimiq</a> est fière d’introduire Albatross, le résultat d‘une collaboration de recherche avec <a href="https://trinkler.software/" target="_blank" rel="noreferrer noopener">Trinkler Software</a>. Albatross est un algorithme de consensus reposant sur la preuve d’enjeu (“Proof-of-stake” en anglais ou “PoS”) permettant d’atteindre des performances proches du maximum théorique pour les algorithmes PoS sur chaîne unique. Bien qu’une <a href="https://arxiv.org/abs/1903.01589" target="_blank" rel="noreferrer noopener">description technique du protocole</a> ait été publiée, ce billet de blog a pour but d’offrir un aperçu plus léger et facile à comprendre.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Il est important</strong> de souligner que Albatross est un algorithme de consensus seulement. En tant que tel, il ne définit pas les fonctionnalités construite sur lui, mais n’est qu’un élément de l’ensemble constitutif d’une blockchain. Bien que Nimiq évalue l’utilisation d’Albatross pour la prochaine génération de son protocole, aucune décision n’a été pour le moment été prise. Plus de détails sur nos plans pour Albatross seront détaillés à la fin de ce post.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Qu’est-ce que la preuve d’enjeu ?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Dans un algorithme de consensus basé sur la preuve d’enjeu (PoS), le nœud éligible pour ajouter le bloc suivant est choisi proportionnellement à la mise qu’il possède dans le système. Cela rend la production de blocs très bon marché par rapport aux algorithmes basés sur la preuve du travail (PoW). Un comportement hostile (par exemple sous la forme de forks) est souvent puni en confisquant une partie de la mise du nœud qui se comporte mal, soit en la détruisant, soit en le redistribuant.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Les trois avantages les plus importants du PoS par rapport au PoW sont :</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><em>une réduction drastique de la consommation d’énergie</em> <em>:</em> il n’est pas nécessaire d’effectuer des calculs très consommateurs d’énergie pour sécuriser la blockchain.</li>
+<li><em>réduction du risque de centralisation</em> <em>:</em> en particulier, les économies d’échelle sont moins un problème dans le PoS.</li>
+<li><em>l’équivalent des attaques à 51% sont bien plus coûteuses :</em> les nœuds qui se comportent mal perdent définitivement leurs mises, à l’inverse du matériel qui réutilisables dans le cas d’un algorithme PoW.</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Que signifie “algorithme de consensus optimiste” ?</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Nous décrivons Albatross — notre nouvel algorithme de consensus pour la blockchain — comme étant <em>optimiste</em>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ce terme ne signifie pas qu‘il sacrifie en sécurité, mais plutôt qu’il s’inspire d’algorithmes spéculatifs byzantins tolérants aux fautes (BFT).</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Les algorithmes BFT<em> classiques</em> fournissent un consensus dans les systèmes distribués tout en considérant un nombre limité d’acteurs malveillants ou byzantins. L’un des exemples les plus marquants d’un tel algorithme est PBFT, sur lequel, par exemple, s’appuie la cryptomonnaie de Tendermint.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Les algorithmes BFT <em>spéculatifs</em> constituent un progrès par rapport aux algorithmes BFT standards. Ils permettent d’augmenter considérablement les performances en l’absence d’acteurs malveillants. C’est ce qu’on appelle le cas optimiste et c’est là que notre description trouve son origine. Dans le cas où des acteurs byzantins seraient présents et tenteraient d’altérer le protocole, d’autres peuvent remarquer et passer le protocole dans son mode plus lent et plus conservateur, offrant les mêmes garanties de sécurité que les protocoles BFT standard.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ainsi, dans le meilleur des cas, les algorithmes de consensus optimistes sont capables de fonctionner beaucoup mieux que les algorithmes classiques. Lors d’une attaque, les algorithmes optimistes ont encore des performances similaires à celles des algorithmes standard.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Le protocole Albatross</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Avec Albatross, les nœuds responsables de la production de nouveaux blocs sont appelés <em>validateurs</em>. Toute personne ayant un intérêt dans le système peut se porter volontaire en tant que validateur en déposant une mise en garantie pouvant être potentiellement “<em>slashed</em>”(“réduite” ndlr)..</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>La production de blocs dans Albatross est divisée en <em>époques</em>. Comme le montre la figure suivante, chaque époque est constituée d’un nombre constant de <em>microblocs </em>(quatre <em>microblocs</em> dans l’exemple ci-dessous) suivis d’un <em>macrobloc</em>. Les <em>microblocs</em> contiennent les transactions et ont un seul producteur de blocs qui est choisi au hasard parmi les validateurs. Alors que n’importe qui peut se porter volontaire pour être un validateur, l’ensemble réel de validateurs dans une époque donnée (les <em>validateurs actifs</em>) est choisi par le<em> macrobloc </em>de l’époque précédente.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/03/1*Q3de2UCoqWisVyukezG_AA.png" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Dans notre exemple, le bloc numéro 0 détermine les <em>validateurs actifs v_0,…,v_k</em> pour l’époque du bloc 1 au bloc 5.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Pour pouvoir choisir au hasard le producteur de blocs suivant dans la liste des validateurs, chaque bloc contient une balise aléatoire, représentée ci-dessus par r_i. Le fabricant d’un bloc utilise une <em>fonction aléatoire vérifiable</em> (VRF) pour produire la prochaine valeur aléatoire r_i à partir de la valeur précédente r_{i-1}. Tous les autres participants peuvent ensuite vérifier l’exactitude de la valeur aléatoire suivante.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Étant donné que ces balises aléatoires sont présentes dans chaque bloc, chaque participant d’Albatross est alors capable de déterminer le producteur de bloc suivant v_{σ(r)} à partir de la liste des validateurs actifs.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>La production de <em>microblocs</em> correspond simplement au producteur de blocs sélectionné mettant les transactions dans un bloc, signant le bloc cryptographiquement et l’envoyant au reste du réseau.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>La production de <em>macroblocs </em>est un peu plus active mais se produit beaucoup plus rarement. Les <em>macroblocs </em>sont produits en utilisant le protocole PBFT classique. A cette fin, le fabricant de blocs choisi — ou dans ce cas plutôt un candidat à la production  — génère la valeur aléatoire suivante et, à partir de cette valeur, détermine la nouvelle liste des validateurs actifs pour l’époque suivante. La liste des validateurs est choisie parmi tous les volontaires avec une chance proportionnelle à leurs mises et basée sur la balise aléatoire. L’auteur de la proposition de bloc publie ensuite sa proposition, et tous les autres validateurs actifs votent en deux tours. Les <em>macroblocs</em> ne contiennent aucune transaction.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Il n’y a pas de notion de temps ciblé entre les blocs, ainsi donc les blocs peuvent être produits presque aussi rapidement que le réseau le permet.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Bien que l’explication ci-dessus ne couvre que le cas optimiste, le protocole reste sécurisé dans l’hypothèse où plus de ⅓ de la liste des validateurs serait des acteurs byzantins. Ces acteurs, cependant, peuvent temporairement ralentir la blockchain et rétrograder la production de blocs à un rythme plus conservateur. Les acteurs byzantins peuvent principalement déclencher deux mécanismes : (1) les” forks”, qui amènent le producteur de blocs suivant à choisir l’un des blocs en conflit et permettent aux validateurs de réduire la mise du validateur malveillant, et (2) les retards, qui obligent un autre validateur à produire le bloc à la place.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Une explication plus détaillée de ces cas se trouve dans le <a href="https://arxiv.org/abs/1903.01589" target="_blank" rel="noreferrer noopener">document technique</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Cohérence vs Disponibilité</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Un compromis intéressant à faire lors de la conception d’un tel protocole est celui entre cohérence et disponibilité. La cohérence décrit la propriété sur laquelle tous les participants du protocole s’entendent sur la même valeur, la plus récente. La disponibilité décrit la propriété que les participants ne peuvent pas être empêchés d’apprendre indéfiniment la valeur correcte et la plus récente.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le <a href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_CAP" target="_blank" rel="noreferrer noopener">théorème CAP</a> stipule maintenant que, pendant une partition du réseau, ces propriétés ne peuvent pas être atteintes en même temps.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le bitcoin, par exemple, favorise la disponibilité plutôt que la cohérence. En cas de fractionnement du réseau, les deux réseaux peuvent continuer à vivre et contenir des transactions potentiellement contradictoires (par exemple, une double dépense). Toutefois, si le réseau se rétablit après le fractionnement, seul un historique unique sera accepté.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Albatross favorise l’uniformité plutôt que la disponibilité. En cas de division du réseau, une seule des partitions réseau peut continuer à fonctionner ou aucune (selon la taille des partitions). Cependant, il n’y aura jamais d’opinion erronée sur l’état le plus récent. Si le réseau se rétablit après le fractionnement, le protocole continuera à fonctionner normalement.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Prochaines étapes</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Maintenant que la description technique d’Albatross est publiée et que le protocole a été présenté par Reto Trinkler dans le contexte de l’introduction de <a href="https://katallassos.com/" target="_blank" rel="noreferrer noopener">Katallassos</a> à l’EthCC’19 à Paris, ce sont les prochaines étapes à suivre :</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Nous avons commencé à construire un <a href="https://github.com/nimiq/albatross-simulator" target="_blank" rel="noreferrer noopener">simulateur pour le protocole Albatross</a> afin d’évaluer sa performance dans les réseaux à grande échelle. Actuellement, ce simulateur ne couvre que le protocole de base sans tenir compte des optimisations et des participants byzantins. Nous prévoyons d’étendre ce simulateur et d’obtenir plus d’informations sur les opérations réelles d’Albatross.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Dans l’intervalle, nous étudions également les possibilités d’optimisation pour Albatross. Ces optimisations incluent l’utilisation de <a href="https://github.com/consensys/handel" target="_blank" rel="noreferrer noopener">Handel</a>, un protocole d’agrégation multi-signature rapide. Entre autres améliorations, nous envisageons également l’applicabilité des fonctions de délai vérifiables pour réduire la communication en cas de non-réponse des producteurs de blocs.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Enfin, lorsque ces conditions préalables nécessaires démontreront les résultats souhaités, nous évaluerons plus avant la faisabilité de l’intégration d’Albatross à Nimiq. Cette étape comprendrait également des détails tels que les récompenses de bloc, HTLCs, les contrats de “vesting” et les pools de “staking”. Nous construirons ensuite un testnet avec Albatross.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Albatross pourrait apporter une augmentation drastique des performance du Nimiq tout en réduisant de manière importante sa consommation d’énergie. Bien qu’une mise en œuvre réussie apporterait des améliorations fondamentales au protocole du Nimiq, toutes ses implications doivent encore être évaluées et examinées à fond.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Team Nimiq se donnerait comme priorité d’assurer une transition en douceur vers un avenir potentiel sans PoW pour le Nimiq qui, à notre avis, profiterait en fin de compte à tout le monde.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:separator --><br />
+<hr class="wp-block-separator" /><!-- /wp:separator --></p>
+<p><!-- wp:quote --></p>
+<blockquote class="wp-block-quote">
+<p><strong>AVERTISSEMENT </strong>: Aucune déclaration ne doit être considérée comme un soutien ou une recommandation de la part de l’équipe Nimiq, d’une cryptomonnaie ou d’un produit de placement. Ni l’information, ni aucun avis contenu dans ce billet ne constitue une sollicitation ou une offre, de la part des créateurs ou des participants, d’achat ou de vente de titres ou d’autres instruments financiers ou de fournir des conseils ou des services de placement.</p>
+</blockquote>
+<p><!-- /wp:quote --></p>

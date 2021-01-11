@@ -1,0 +1,48 @@
+---
+layout: post
+title: 'Nimiq - Une longueur d''avance : nœuds sur navigateur et consensus instantané'
+date: 2019-10-10 12:06:11.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Communauté
+tags: []
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _heateor_sss_meta: a:2:{s:7:"sharing";i:0;s:16:"vertical_sharing";i:0;}
+  twitterCardType: summary
+  _thumbnail_id: '2558'
+  _xmlsf_image_attached: a:3:{s:3:"loc";s:67:"https://nimiq.cafe/wp-content/uploads/2019/10/NimiqArchitecture.jpg";s:5:"title";s:17:"NimiqArchitecture";s:7:"caption";s:0:"";}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2019/10/10/nimiq-une-longueur-davance-noeuds-sur-navigateur-et-consensus-instantane/"
+---
+<p>Avant de débuter les explications il est de bon ton de noter que toutes les notions abordées ici sont disponibles et approfondies dans le <a href="https://www.nimiq.com/whitepaper/"><em>whitepaper</em></a> ou dans la <a href="https://www.nimiq.com/developers/#apis">documentation</a> du Nimiq.</p>
+<p>Cela étant dit, la majorité des membres de la communauté Nimiq ne sont pas des techniciens et ne sont donc pas nécessairement éduqués sur tout ce qui se passe sous le capot du protocole.  Néanmoins cet état de fait ne devrait ni empêcher d'aborder la question du fonctionnement de Nimiq (de manière simplifiée), ni de comprendre pourquoi il s'agit d'un projet si enthousiasmant. Enfin chacun devrait pouvoir apprécier les efforts produits et l'élégance des solutions développées par Team Nimiq et la communauté.</p>
+<p>Commençons par la base commune à chaque cryptomonnaie reposant sur la blockchain : lorsque vous décidez d'envoyer des cryptos d'une adresse à une autre sur une blockchain (comme Nimiq, Bitcoin ou Ethereum), vous créez une transaction authentifiée par votre signature, comme vous le savez probablement déjà.</p>
+<p>Cette transaction est ensuite diffusée à d'autres nœuds (qui hébergent chacun une copie similaire du "grand livre" de compte regroupant l'historique des transactions) et finalement minée dans un "bloc" qui est propagé sur le réseau jusqu'à ce que la majorité y consente. Passé ce point, la transaction est dite "validée" et fera partie du grand livre présent donc sur tous les nœuds du réseau.</p>
+<p>[caption id="attachment_2567" align="aligncenter" width="1024"]<img class="wp-image-2567 size-large" src="{{ site.baseurl }}/assets/2019/10/BlockchainSche&#769;mav3-1024x354.jpg" alt="" width="1024" height="354" /> Crédits : Splunk[/caption]</p>
+<p>&nbsp;</p>
+<p>Pour diffuser des transactions, vous disposez traditionnellement de deux choix : soit télécharger un client et héberger votre propre nœud ce qui implique de passer des heures/jours à télécharger l'ensemble de la blockchain (ou du moins une partie conséquente de celle-ci) pour atteindre un consensus, un processus notoirement lent et assez fastidieux OU faire confiance à un nœud tiers (une méthode nommée SPV - Simplified Payment Verification) pour le faire pour vous, ce qui est rapide mais moins sûr et beaucoup moins résistant à la censure.</p>
+<p>Nimiq innove ici en étant la première blockchain à offrir le meilleur des deux mondes. Comment ? Simplement en vous permettant de faire tourner un nœud directement dans votre navigateur, ce dernier se synchronisera avec le reste du réseau en un instant.</p>
+<p>Pour accomplir cet exploit, Nimiq s'appuie sur 3 composants principaux :</p>
+<ol>
+<li>L'utilisation de <strong>WebRTC</strong> permettant des connexions de paire-à-paire depuis votre navigateur vers le reste du réseau, c'est ce qui vous permet d'être un pair dans le réseau Nimiq.</li>
+<li>Les méthodes de <strong>consensus Nano</strong> et <strong>Pico</strong> permettant de se synchroniser en toute sécurité et d'obtenir le dernier état de la blockchain en quelques secondes en téléchargeant quelques ko de données, ces données font office de preuve cryptographique (voir <a href="https://nipopows.com/">NiPoPoW</a>).</li>
+<li>Une base de code javascript (Javascript est à ce jour le "langage du web") permettant de "lancer" le noeud directement dans le navigateur.</li>
+</ol>
+<p><img class="aligncenter size-full wp-image-2557" src="{{ site.baseurl }}/assets/2019/10/NimiqArchitecture.jpg" alt="" width="764" height="426" /></p>
+<p>Maintenant, vous vous demandez peut-être : "C'est sympa, mais qu'est-ce que cela apporte?".<br />
+Voici ce que ces trois propriétés de la blockchain Nimiq offrent :</p>
+<p>Tout d'abord, c'est une architecture plus sûre, mais surtout beaucoup plus résistante à la censure, car vous ne dépendez pas d'un nœud tiers pour diffuser vos transactions.</p>
+<p>Ensuite vous pouvez créer des applications web, des sites web et des jeux directement connectés à la blockchain Nimiq grâce à un simple script web et quelques lignes de javascript. L'intégration dans le "Web 2.0" existant est ainsi facilitée par rapport aux autres cryptomonnaies, Nimiq est effectivement rétrocompatible avec le web d'aujourd'hui.</p>
+<p>Si vous êtes développeur web et que vous souhaitez intégrer Nimiq, vous n'avez pas à vous soucier de la sécurité du SPV ou des intermédiaires. Tout fonctionnera directement et de manière décentralisée dans le navigateur web de l'utilisateur, on peut ainsi imaginer des procédés pour le passage en caisse lors de paiements en ligne ou l'identification sans serveurs tiers.</p>
+<p>En conclusion la capacité à créer des noeuds directement sur navigateurs pouvant se synchroniser à la blockchain Nimiq sans tiers est, non seulement plus sécurisé et plus facile à utiliser, mais en plus ouvre la porte à l'intégration dans une ribambelle d'applications.</p>

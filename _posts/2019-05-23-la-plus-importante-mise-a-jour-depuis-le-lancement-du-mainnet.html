@@ -1,0 +1,174 @@
+---
+layout: post
+title: La plus importante mise à jour depuis le lancement du Mainnet
+date: 2019-05-23 10:10:40.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Officiel
+tags: []
+meta:
+  _edit_last: '1'
+  tc-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"2062";s:11:"_thumb_type";s:5:"thumb";}
+  layout_key: ''
+  post_slider_check_key: '0'
+  fpu-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"2062";s:11:"_thumb_type";s:5:"thumb";}
+  _heateor_sss_meta: a:2:{s:7:"sharing";i:0;s:16:"vertical_sharing";i:0;}
+  _thumbnail_id: '2062'
+  _xmlsf_image_attached: a:3:{s:3:"loc";s:53:"https://nimiq.cafe/wp-content/uploads/2019/05/MAJ.png";s:5:"title";s:3:"MAJ";s:7:"caption";s:0:"";}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2019/05/23/la-plus-importante-mise-a-jour-depuis-le-lancement-du-mainnet/"
+---
+<p><!-- wp:heading {"level":4} --></p>
+<h4>L’équipe Nimiq est ravie de publier une mise à jour majeure de ses applications qui améliorera considérablement la manière dont les utilisateurs peuvent utiliser leurs NIM ainsi que la façon dont les développeurs peuvent intégrer&nbsp;Nimiq.</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>La mise à jour comprend de nouvelles fonctionnalités, une sécurité améliorée et renforcée et une API ouverte permettant aux applications tierces d’intégrer les fonctionnalités Nimiq et de gérer le NIM directement dans le navigateur.&nbsp;<br />Et tout cela dans une toute nouvelle interface utilisateur qui facilite plus que jamais l’utilisation de vos NIM.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ce billet se concentrera sur les principales caractéristiques d’un point de vue technique. Restez à l’écoute pour un article détaillé sur les progrès du en terme UX/UI/UI et un article sur les fonctionnalités et les versions dans les semaines à venir.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>&nbsp;<strong>Alors, quoi de neuf&nbsp;?</strong></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>Des comptes à plusieurs adresses</li>
+<li>Une nouvelle architecture et intégration Ledger</li>
+<li>Des fichiers de connexion Nimiq</li>
+<li>Des mots de passe modifiables</li>
+<li>Une interface de déconnexion</li>
+<li>Un générateur de code QR et un scanner</li>
+<li>Une API ouverte pour l’intégration de tiers</li>
+<li>Nimiq Checkout</li>
+<li>La prise en charge de la signature de messages</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Un seul compte, plusieurs adresses</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/0*i0vR4sgwN-pOGLZc" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Avec la dérivation de clé privée conforme aux normes BIP44, une <em>seed</em> supporte maintenant un nombre infini d’adresses. Cela signifie qu’avec n’importe quel nouveau comptes, vous pouvez générer plus d’une adresse pour celui-ci. Pour une introduction plus approfondie sur les portefeuilles hiérarchisés déterministes, veuillez vous référer à cet <a href="https://medium.com/bitcraft/hd-wallets-explained-from-high-level-to-nuts-and-bolts-9a41545f5b0" target="_blank" rel="noreferrer noopener">article</a> (en anglais).</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Avec cette mise à jour, il est maintenant facile d’organiser vos fonds, vos paiements et vos transactions sans avoir besoin de sauvegarder et de stocker une clé pour chacune de ces adresses.&nbsp;<br />Au lieu de cela, il ne s’agit que d’un seul compte et d’une seule sauvegarde. Tout en profitant de cette commodité, vous avez toujours la liberté de créer plusieurs comptes multi-adresses et, par exemple, de séparer vos économies de vos dépenses journalières et de vos frais professionnels. De cette façon, vous pouvez stocker les sauvegardes de chacun de ces comptes en conséquence&nbsp;: par exemple à la maison, dans plusieurs endroits, et dans un coffre-fort.<br />&nbsp;<br />Les adresses multiples sont maintenant également prises en charge pour les portefeuilles matériel Ledger&nbsp;!</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Anciens comptes, nouveaux&nbsp;comptes</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Avec l’introduction des comptes multi-adresses, les comptes conventionnels à une seule adresse deviennent des comptes <em>legacy</em>. Ils sont toujours pris en charge mais n’hériteront pas de nouvelles fonctionnalités telles que le fichier de connexion et ne seront pas développés à l’avenir. Nous recommandons à tous les utilisateurs d’effectuer une mise à niveau en créant un nouveau compte multi-adresse et de transférer leurs fonds.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Keyguard et&nbsp;Ledger</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>L’architecture générale du Keyguard a été remaniée, menant à l’avénement d’une nouvelle structure&nbsp;:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/0*Y-0NaNN2hjcup1d9" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le Hub Nimiq gère et héberge vos comptes, c’est-à-dire les adresses et les étiquettes de chaque compte, mais jamais les clés. Les clés sont stockées dans un emplacement dédié et hautement sécurisé, tel que le porte-monnaie du Ledger ou le Keyguard. Le Hub Nimiq est positionné en aval des différentes solutions d’hébergement de clés, fournissant une interface unifiée pour que les utilisateurs puissent gérer tous leurs comptes qui pourraient être associés à plusieurs clés à partir de plusieurs emplacements. Ainsi, l’utilisateur verra toujours la même interface utilisateur familière partout où il effectue un paiement.&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Sécurité du&nbsp;Keyguard</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le Keyguard est maintenant plus sûr que jamais. Il est établi avec des mécanismes <em>Content-Security-Policies</em>, ainsi que d’autres en-têtes de sécurité pertinents (plus de détails <a href="https://securityheaders.com/?q=keyguard.nimiq.com" rel="noreferrer noopener" target="_blank">ici</a>). De plus, tous les scripts et styles du domaine Keyguard sont maintenant chargés dans le navigateur avec des <em>checksums</em> d’intégrité, une technique permettant au navigateur de vérifier l’authenticité des fichiers téléchargés.&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Intégration approfondie du&nbsp;Ledger</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Avec cette nouvelle architecture, les comptes Ledger et Keyguard sont désormais placés derrière la même couche d’abstraction. Ainsi, du point de vue de l’utilisateur, un compte Keyguard se comporte de la même façon qu’un compte Ledger, il peut avoir plusieurs adresses, peut être renommé et les deux types de comptes peuvent être utilisés avec des applications tierces accessibles via le Hub Nimiq.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Connexion et déconnexion</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Après avoir créé un nouveau compte Nimiq, il vous sera proposé de télécharger un fichier de connexion. C’est un moyen sûr et facile de sauvegarder votre clé privée. Cela est facile parce qu’il vous suffit de télécharger une petite image au lieu d’avoir besoin d’écrire les 24 mots de récupération tout de suite. Le fichier est livré avec un code QR et peut donc être imprimé et scanné facilement avec votre téléphone ou votre webcam au lieu d’entrer à nouveau les 24 mots. Et ils sont également jolis&nbsp;:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/0*ROi25VAQI-B19kbI" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>Dans un même temps, il est sécurisé car votre mot de passe protège la clé dans votre fichier de connexion. Cela signifie que la clé est cryptée de manière sécurisée par opposition aux mots de récupération qui sont du texte brut. Si quelqu’un met la main sur eux, ils peuvent voler vos fonds alors que le fichier de connexion ne fonctionne qu’avec votre mot de passe.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Grâce au nouveau fichier de connexion, il est facile de stocker votre sauvegarde et donc de vous déconnecter de votre compte d’épargne lorsque vous n’en avez plus besoin. De plus, le fichier de connexion vous permet de vous connecter facilement à votre compte sur la machine de quelqu’un d’autre, d’effectuer des transactions et des paiements, et de vous déconnecter lorsque vous avez terminé, sans laisser de trace. Se déconnecter signifie supprimer toutes les données relatives au compte de cet appareil, y compris votre clé.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Étant que le mot de passe devient plus critique pour la sécurité d’un compte, une fonctionnalité de changement de mot de passe a été implémentée. Contrairement aux solutions centralisées, où un changement de mot de passe entraînerait une mise à jour dans une base de données, un changement de mot de passe avec Nimiq entraîne la création d’un nouveau fichier de connexion, crypté avec le nouveau mot de passe.&nbsp;<br />Pour plus de détails sur le fichier de connexion et le standard ImageWallet sous-jacent, consultez <a href="https://medium.com/nimiq-network/agoratrade-nimiq-96de83a737c2" target="_blank" rel="noreferrer noopener">ce billet de blog</a> (en anglais).</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/0*vaD364kz6uGjsF64" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Codes QR</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Il est maintenant plus facile de partager votre adresse ou de demander une transaction en partageant et en scannant les codes QR directement depuis le nouveau <a href="https://safe.nimiq.com" rel="noreferrer noopener" target="_blank">Safe</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>La fonctionnalité QR-Code permet donc une expérience de paiement en caisse. Bien que des interfaces et des applications désignées pour cela soient planifiées, des transactions faciles et rapides en NIM  en personne entre des étrangers sont dès maintenant possibles.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>API Ouverte</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>En incluant une balise script ou en installant un paquet NPM, des requêtes peuvent être faites auprès de l’API Hub Nimiq, permettant aux développeurs d’apps de créer des applications de paiement complètes sur l’infrastructure Nimiq. Du point de vue de l’utilisateur, il s’agit de la même interface utilisateur pratique qui effectuera les opérations de sécurité sur différentes applications sans transmettre d’informations privées aux applications grand public.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Voir <a href="https://github.com/nimiq/hub" rel="noreferrer noopener" target="_blank">https://github.com/nimiq/hub</a> pour plus de détails, pour savoir par où commencer et pour obtenir de la documentation détaillée.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Nimiq Checkout</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image --></p>
+<figure class="wp-block-image"><img src="{{ site.baseurl }}/assets/2019/05/0*PetHJGMHbOh5fsW4" alt="" /></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>La nouvelle fonction d‘encaissement dévoile une interface utilisateur spécialisée qui a été optimisée pour les paiements dans les magasins par rapport à la méthode générale de signature d’une transaction.&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Il permet aux utilisateurs de payer directement à partir de leur navigateur sans avoir à ouvrir une application de portefeuilles dédiée.&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Le concepteur de la boutique peut fournir le logo de l’adresse boutique pour faciliter encore plus le passage de la boutique au paiement. La transaction signée est retournée mais aussi directement envoyée au réseau, ce qui permet aux développeurs de déployer des boutiques sans accès à un nœud Nimiq ou même de construire des solutions pour boutiques entièrement côté client.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4>Prise en charge de la signature de&nbsp;messages</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>La signature de messages arbitraires est maintenant supportée. Il vous permettra de vous identifier et de prouver que vous êtes propriétaire d’une adresse particulière. Les applications ou les sites Web peuvent utiliser cette fonctionnalité pour vous identifier par votre adresse Nimiq. Vous et vous seul pouvez prouver la propriété de votre adresse car vous avez la clé privée de votre compte Nimiq — pas besoin de vous rappeler de nouveaux mots de passe ou noms d’utilisateur.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>L’équipe Nimiq évalue actuellement une fonction d’ouverture de session unique. Plus d’informations à ce sujet dans un prochain article.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3>Essayez-le&nbsp;!</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Allez-y et créez un <a href="https://hub.nimiq.com/onboard" rel="noreferrer noopener" target="_blank">nouveau compte</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Aidez Nimiq à grandir en donnant votre avis sur ce que vous aimez et ce que vous pensez pouvoir améliorer. Partagez-le sur <a href="https://twitter.com/nimiq" rel="noreferrer noopener" target="_blank">Twitter</a> avec <em>#easynimiq </em>ou venez en discuter sur <a href="https://t.me/Nimiq" rel="noreferrer noopener" target="_blank">Telegram</a> et <a href="https://discordapp.com/invite/cMHemg8" rel="noreferrer noopener" target="_blank">Discord</a>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Pura Vida</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p><strong>Team Nimiq</strong></p>
+<p><!-- /wp:paragraph --></p>

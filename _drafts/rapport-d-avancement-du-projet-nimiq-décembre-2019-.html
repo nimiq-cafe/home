@@ -1,0 +1,101 @@
+---
+layout: post
+title: Rapport d'avancement du projet Nimiq (Décembre 2019)
+date:
+type: post
+parent_id: '0'
+published: false
+password: ''
+status: draft
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/"
+---
+<h4 class="graf graf--h4 graf--empty"></h4>
+<p class="graf graf--p">Le mois dernier, nous avons publié le<a class="markup--anchor markup--p-anchor" href="https://medium.com/nimiq-translations/rapport-davancement-du-projet-nimiq-e3c9551ab174" target="_blank" rel="noopener noreferrer" data-href="https://medium.com/nimiq-translations/rapport-davancement-du-projet-nimiq-e3c9551ab174"> premier rapport d’avancement du projet</a>. Au fur et à mesure que les choses avancent, nous souhaitons partager avec vous une autre mise à jour sur les objectifs à venir, les dernières réalisations et les récents changements de priorités.</p>
+<h3 class="graf graf--h3">Structure de l’équipe</h3>
+<p class="graf graf--p">Si vous ne connaissez pas bien les membres de Team Nimiq, voici un bref résumé de la structure de l’équipe (sans parler des aspects juridiques et opérationnels) :</p>
+<ul class="postList">
+<li class="graf graf--li"><strong class="markup--strong markup--li-strong">Core (R&amp;D Blockchain) :</strong> Janosch, Jeff, Marvin, Pascal, Philipp, Richard.</li>
+<li class="graf graf--li"><strong class="markup--strong markup--li-strong">Frontend (UI/UX, site web, applications) :</strong> Daniel, Julian, Matheo, Tammo, Sebastian, Sören, Sven.</li>
+<li class="graf graf--li"><strong class="markup--strong markup--li-strong">Communication (marketing, création de contenu, réseaux sociaux) :</strong> Atua, Chris, Julian, Richy, Sven, Sui-Ju, Tammo.</li>
+</ul>
+<h3 class="graf graf--h3">Objectifs à venir</h3>
+<h4 class="graf graf--h4">Core</h4>
+<ul class="postList">
+<li class="graf graf--li">Albatross DevNet : éliminer les bugs, améliorer les performances</li>
+<li class="graf graf--li">Recherche d’optimisations potentielles pour Nimiq 2.0</li>
+<li class="graf graf--li">Stabilisation et test de la demo d’Albatross</li>
+</ul>
+<h4 class="graf graf--h4">Frontend</h4>
+<ul class="postList">
+<li class="graf graf--li">Poursuivre l’amélioration des cashlinks et des fonctions multidevises : révision du code et fusion dans la banche principale.</li>
+<li class="graf graf--li">Prototypage d’un service permettant aux commerçants de créer facilement des factures en crypto et d’envoyer un lien aux clients pour payer — plus de détails bientôt !</li>
+<li class="graf graf--li"><a class="markup--anchor markup--li-anchor" href="https://fr.wikipedia.org/wiki/Request_for_comments" target="_blank" rel="noopener noreferrer" data-href="https://fr.wikipedia.org/wiki/Request_for_comments">RFCs</a> pour l’API Hub Checkout et Nimiq ID pour présenter nos idées et recueillir les commentaires de la communauté.</li>
+<li class="graf graf--li">Conception et planification du microsite Nimiq OASIS</li>
+<li class="graf graf--li">Créateur de cartes-cadeaux de Noël à l’aide de cashlinks</li>
+</ul>
+<h4 class="graf graf--h4">Communication</h4>
+<ul class="postList">
+<li class="graf graf--li">Approche de magasins WooCommerce : Faites-nous savoir si vous avez une boutique en ligne WordPress ou si vous connaissez quelqu’un en tenant une !</li>
+<li class="graf graf--li">Renforcer la présence de Nimiq sur LinkedIn : suivez-nous dessus !</li>
+<li class="graf graf--li">Préparation d’une vidéo explicative pour Nimiq OASIS</li>
+<li class="graf graf--li">Promotion auprès d’influenceurs dans la crypto pour des reviews, des entrevues et des AMA : Faites-nous savoir si vous désirez nous interviewer !</li>
+</ul>
+<h3 class="graf graf--h3">Changements de priorités</h3>
+<h4 class="graf graf--h4">UTXOTree reporté au Q2 2020</h4>
+<p class="graf graf--p">Comme annoncé dans les récentes mises à jour du <em class="markup--em markup--p-em">whitepaper</em> de Nimiq, nous avons mis au point une nouvelle approche technique autour des soldes de comptes. Nous l’appelons l’UTXOTree parce qu’il s’agit d’un modèle hybride entre les transactions basées sur UTXO et un arbre de comptes. Dans cette nouvelle structure de données, l’arborescence des comptes permet d’accéder facilement à toutes les transactions non dépensées d’une adresse, offrant ainsi tous les avantages d’un modèle basé sur les comptes — par exemple, des relevés de compte prouvables — tout en les combinant avec la puissance des UTXO — par exemple, ayant plusieurs entrées et sorties par transaction. De plus, la hauteur de début de validité dans les transactions — requise dans Nimiq 1.0 — peut être omise, ce qui simplifie le protocole et améliore la facilité d’utilisation du réseau.</p>
+<p class="graf graf--p">L’UTXOTree est une mise à jour plutôt technique de la structure de données des comptes Nimiq. D’autre part, Albatross relie déjà plusieurs dépendances comme le calcul d’une nouvelle courbe d’émission, la nouvelle structure de bloc micro/macro et enfin le passage à la preuve d’enjeu (<em class="markup--em markup--p-em">Proof of Stake</em>). Après les discussions du mois précédent, notre équipe Core a donc décidé de terminer toutes les tâches liées à la mise en œuvre de l’algorithme de consensus Albatross en premier. Cela permettra à la communauté de se faire une première impression d’Albatross et de Nimiq 2.0 plus rapidement tout en laissant de la place pour les futures mises à niveau prévues, y compris le passage à UTXOTree.</p>
+<h4 class="graf graf--h4">NimiqID passe à 2020</h4>
+<p class="graf graf--p">L’écosystème de Nimiq est d’abord un navigateur, ce qui le rend facile à utiliser sur le web. Nous <a class="markup--anchor markup--p-anchor" href="https://forum.nimiq.community/t/nimiqid-authenticate-with-your-nimiq-account/96" target="_blank" rel="noopener noreferrer" data-href="https://forum.nimiq.community/t/nimiqid-authenticate-with-your-nimiq-account/96">discutons depuis un certain temps</a> déjà avec des membres de la communauté de la création d’une solution d’authentification basée sur Nimiq qui tire parti de la convivialité et de la conception supérieure de l’écosystème Nimiq. Une solution qui profite de la cryptographie de Nimiq et qui remplace le fameux bouton “Se connecter avec Google/Facebook” semble vraiment très sexy, et c’est pourquoi nous sommes très enthousiastes à son sujet. Il est à noter qu’une telle solution n’utiliserait pas la blockchain de Nimiq, mais la cryptographie à clé publique de Nimiq et le Nimiq Hub pour prouver l’identité des utilisateurs aux applications web. Il est également important de tenir compte du fait que d’autres solutions analogues comme Digi-ID existent déjà. De telles solutions semblent avoir du mal à s’imposer car l’une des principales raisons pour lesquelles les développeurs intègrent “Se connecter Google/Facebook” est de profiter de l’information existante de l’utilisateur qui est stockée par ces plateformes. L’équipe Frontend de Nimiq est impatiente de travailler sur NimiqID, mais comme Nimiq ne stocke aucune information personnelle, il est peu probable que NimiqID change la donne dans la situation actuelle. Nous avons donc décidé de nous concentrer sur notre technologie de base pour le moment.</p>
+<p class="graf graf--p">Étant donné que Nimiq travaille sur des technologies qui changent la donne, à savoir Albatross et OASIS, nous devons allouer des ressources Frontend pour soutenir ces efforts. En commençant par le Devnet Albatross, notre équipe Frontend se concentrera sur l’amélioration des applications actuelles et la création de nouvelles applications pour le premier vol d’Albatross, prévu pour l’année prochaine. De plus, avec l’introduction par Nimiq du <em class="markup--em markup--p-em">staking</em>, les équipes de conception Frontend et UI/UX ont le potentiel de créer le processus de <em class="markup--em markup--p-em">staking</em> plus intuitif et le plus pratique que le monde du crypto ait vu.</p>
+<h3 class="graf graf--h3">Réalisations récentes</h3>
+<h4 class="graf graf--h4">Premiers tests de Nimiq OASIS</h4>
+<p class="graf graf--p">Nimiq OASIS est une technologie inventée par les développeurs de Team Nimiq pour permettre la création de HTLC hors chaîne. Cette technologie sera utilisée pour exécuter des <em class="markup--em markup--p-em">swaps</em> hors chaîne tels que fiat/fiat, fiat/crypto et autres actifs négociables. Nous sommes heureux de vous annoncer que les <a class="markup--anchor markup--p-anchor" href="https://twitter.com/nimiq/status/1194441520897757184" target="_blank" rel="noopener noreferrer" data-href="https://twitter.com/nimiq/status/1194441520897757184">premiers tests de Nimiq OASIS</a> ont été couronnés de succès. Nous croyons qu’OASIS a un énorme potentiel à apporter à l’ensemble de l’espace crypto et nous ne pourrions être plus excités !</p>
+<figure class="graf graf--figure graf--iframe">
+<div class="aspectRatioPlaceholder is-locked">
+<div class="aspectRatioPlaceholder-fill"></div>
+<div class="iframeContainer"><iframe src="/media/649067e1065f8e2699b088f6f2c5e31b" width="700" height="393" frameborder="0" allowfullscreen="allowfullscreen" data-width="854" data-height="480" data-media-id="649067e1065f8e2699b088f6f2c5e31b" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FNCUqr4W4Mvs%2Fhqdefault.jpg&amp;key=a19fcc184b9711e1b4764040d3dc5c07" data-mce-fragment="1"></iframe></div>
+</div>
+</figure>
+<p class="graf graf--p">Nous continuerons à travailler sur Nimiq OASIS lui-même et nous construisons également un nouveau produit supporté par Nimiq OASIS. N’oubliez pas de <a class="markup--anchor markup--p-anchor" href="https://twitter.com/nimiq" target="_blank" rel="noopener noreferrer" data-href="https://twitter.com/nimiq">nous suivre sur Twitter</a> pour être le premier à obtenir des informations sur les nouveaux développements.</p>
+<h4 class="graf graf--h4">Albatross DevNet</h4>
+<p class="graf graf--p">Le <a class="markup--anchor markup--p-anchor" href="https://twitter.com/terorie_dev/status/1201354792527896576" target="_blank" rel="noopener noreferrer" data-href="https://twitter.com/terorie_dev/status/1201354792527896576">premier aperçu d‘Albatross</a> est presque prêt à être mis en ligne, et c’est… <strong class="markup--strong markup--p-strong">rapide</strong> <strong class="markup--strong markup--p-strong">! </strong>Il y a certainement un sentiment de nostalgie qui pourrait rappeler aux partisans de longue date les premiers jours du BetaNet. Vous avez probablement pu apercevoir Janosch, un développeur Core tweetant sur la vitesse d‘Albatross. Cependant, le lancement de la première démo d’Albatross a nécessité l’implication de la quasi-totalité de l’équipe.</p>
+<p class="graf graf--p">Compte tenu de la performance d’Albatross, nous sommes ravis que le consensus déploie enfin ses ailes et augmente la visibilité de Nimiq dans l’espace crypto.</p>
+<figure class="graf graf--figure"><img class="graf-image" src="{{ site.baseurl }}/assets/1*4n4itJ8msa0WLF9qipZd4w.png" data-image-id="1*4n4itJ8msa0WLF9qipZd4w.png" data-width="1280" data-height="722" /></figure>
+<p class="graf graf--p">Nous lancerons bientôt une démo d’ Albatross qui servira de pièce maîtresse à nos efforts de marketing à l’avenir. Nous sommes impatients d’entendre vos idées, vos questions et vos suggestions !</p>
+<h4 class="graf graf--h4">Nimiq Multi-Currency Checkout et Kindhumans</h4>
+<p class="graf graf--p">Après l’annonce initiale de l’utilisation par les Kindhumains de la blockchain Nimiq pour enregistrer une empreinte immutable de leurs rapports de transparence, Nimiq a continué à explorer les possibilités de collaboration avec Kindhumans. Après tout, Kindhumans est une boutique en ligne avec un énorme potentiel de croissance, partageant la mentalité éthique et caritative de Team Nimiq. Nous remercions l’équipe Kindhumans de nous avoir rejoints pour créer et tester le premier Cryptocurrency Checkout qui supporte Bitcoin, Ethereum et Nimiq sans avoir besoin d’informations personnelles ou d’un intermédiaire. Il s’agit d’un effort incroyable de la part de l’équipe de première ligne qui a fourni à la communauté de Nimiq un outil formidable qui peut être intégré dans n’importe quel magasin de commerce en ligne.</p>
+<figure class="graf graf--figure graf--layoutOutsetCenter"><img class="graf-image" src="{{ site.baseurl }}/assets/1*zWz37jdhXKqY3brwW8qE9A.png" data-image-id="1*zWz37jdhXKqY3brwW8qE9A.png" data-width="876" data-height="144" /></figure>
+<h4 class="graf graf--h4">TEN31 visite Nimiq et répond aux questions de la communauté</h4>
+<p class="graf graf--p">Matthias von Hauff, CEO de TEN31 Bank, a visité Nimiq dans la jungle et nous avons profité de l’occasion pour donner à la communauté Nimiq la possibilité de poser des questions sur notre partenariat en utilisant un nouveau format : dix questions, trente et une secondes par question. Vous pouvez visionner l’interview <a class="markup--anchor markup--p-anchor" href="https://www.youtube.com/watch?v=QWbRZVcIrnk&amp;feature=youtu.be" target="_blank" rel="noopener noreferrer" data-href="https://www.youtube.com/watch?v=QWbRZVcIrnk&amp;feature=youtu.be">ici</a>.</p>
+<figure class="graf graf--figure graf--iframe">
+<div class="aspectRatioPlaceholder is-locked">
+<div class="aspectRatioPlaceholder-fill"></div>
+<div class="iframeContainer"><iframe src="/media/620d52f52d80517e6ca5aa5c861444df" width="700" height="393" frameborder="0" allowfullscreen="allowfullscreen" data-width="854" data-height="480" data-media-id="620d52f52d80517e6ca5aa5c861444df" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FQWbRZVcIrnk%2Fhqdefault.jpg&amp;key=a19fcc184b9711e1b4764040d3dc5c07" data-mce-fragment="1"></iframe></div>
+</div>
+</figure>
+<h4 class="graf graf--h4">Tests de la Nimiq Rust Client Release Candidate</h4>
+<p class="graf graf--p">Le mois dernier, nous avons publié l’implémentation en Rust pour la communauté Nimiq, qui a commencé à le tester jusqu’au point <a class="markup--anchor markup--p-anchor" href="https://twitter.com/nimiq/status/1200533569048850435" target="_blank" rel="noopener noreferrer" data-href="https://twitter.com/nimiq/status/1200533569048850435">de faire tourner un nœud Nimiq directement sur un mobile Android !</a> Nous avons également <a class="markup--anchor markup--p-anchor" href="https://twitter.com/nimiq/status/1195070449706766342" target="_blank" rel="noopener noreferrer" data-href="https://twitter.com/nimiq/status/1195070449706766342">testé le nouveau client Rust </a>dans les Seed nodes Nimiq avec de bons résultats. Après quelques tests supplémentaires, nous prévoyons de sortir la première version stable du Nimiq Rust Client.</p>
+<h4 class="graf graf--h4">Mise à jour du plugin Nimiq Cryptocurrency Checkout pour WordPress</h4>
+<p class="graf graf--p">Notre plugin WooCommerce a été mis à jour pour s’intégrer avec le Multi-Currency Checkout. Pour la première fois, les magasins WordPress peuvent accepter BTC, ETH et NIM sans intermédiaire. Nous sommes très enthousiaste vis à vis de cette contribution à l’espace crypto.</p>
+<blockquote class="graf graf--pullquote"><p>La plupart des autres plugins de WordPress exigent que vous payiez, que vous ayez une limite de transactions mensuelle ou que vous ayez besoin de renseignements personnels et prennent habituellement la garde de vos fonds. Vous comptez sur les autres pour tenir leurs promesses. Enfin, il existe un moyen anonyme et facile d’accepter les principales cryptomonnaies : Bitcoin, Ethereum, et Nimiq ! :)</p></blockquote>
+<figure class="graf graf--figure"><img class="graf-image" src="{{ site.baseurl }}/assets/1*y_7MG2GjJ6iI_hdjeP8egg.jpeg" data-image-id="1*y_7MG2GjJ6iI_hdjeP8egg.jpeg" data-width="1200" data-height="628" /></figure>
+<h4 class="graf graf--h4">Nimiq “plante” 3458 arbres</h4>
+<p class="graf graf--p">Nimiq s’est joint au YouTuber Mr Beast dans ses efforts pour planter 20 millions d’arbres en ajoutant la possibilité de faire don d’un arbre dans la <a class="markup--anchor markup--p-anchor" href="http://Nimiq%20Shop" target="_blank" rel="noopener noreferrer" data-href="http://Nimiq Shop">boutique Nimiq</a>. Pour soutenir davantage cet effort, nous avons lancé une campagne dans le cadre de laquelle la Fondation Nimiq fait don d’un deuxième arbre pour chaque arbre donné par la communauté Nimiq. Nous tenons à remercier tous les supporters de Nimiq qui nous ont aidés à rendre notre monde plus vert.</p>
+<figure class="graf graf--figure"><img class="graf-image" src="{{ site.baseurl }}/assets/1*8FrFUhLyRdqNP3XsJ1Vz_Q.png" data-image-id="1*8FrFUhLyRdqNP3XsJ1Vz_Q.png" data-width="1600" data-height="800" /></figure>
+<h3 class="graf graf--h3">Programme de primes communautaires</h3>
+<p class="graf graf--p">Tel que mentionné dans le <a class="markup--anchor markup--p-anchor" href="https://medium.com/nimiq-translations/sixi%C3%A8me-r%C3%A9union-du-fond-communautaire-cd0bde2b039b" target="_blank" rel="noopener noreferrer" data-href="https://medium.com/nimiq-translations/sixi%C3%A8me-r%C3%A9union-du-fond-communautaire-cd0bde2b039b">dernier rapport de la réunion de financement communautaire</a>, le Comité de financement communautaire du Nimiq a discuté des façons de proposer des projets à la communauté afin d’encourager les contributions techniques et non techniques. L’une des idées à l’étude est le programme de primes communautaires Nimiq. L’objectif principal de cet effort est de permettre à la communauté de participer au projet en contribuant à la croissance de l’écosystème de Nimiq. Toute l’équipe est à la disposition des braves collaborateurs pour les aider et les guider.</p>
+<p class="graf graf--p">Richy (Community Manager) et Sven (Documentation technique) se sont associés à nos équipes Frontend et Core pour rassembler les idées qui peuvent être utilisées dans ce programme. Nous sommes à la recherche de projets qui soient amusants à réaliser tout en étant stimulants, qui ont un impact positif dans la communauté et qui peuvent être facilement encadrés par Team Nimiq. Les projets du Community Bounty Program seront annoncés sur les canaux de réseaux sociaux de Nimiq, <a class="markup--anchor markup--p-anchor" href="https://forum.nimiq.community/t/about-the-bounties-category/496" target="_blank" rel="noopener noreferrer" data-href="https://forum.nimiq.community/t/about-the-bounties-category/496">partagés publiquement sure le Forum Nimiq</a> et seront bientôt ajoutés à notre site Web.</p>
+<p class="graf graf--p">Si vous avez d’autres idées de projets, veuillez communiquer avec les représentants du conseil communautaire : Chugwig, Wekkel, Tomkha, Sven, Marvin et Richy.</p>
+<p class="graf graf--p">Chez Team Nimiq, nous sommes très excité par le potentiel d‘Albatross et nous continuerons à travailler pour faire connaître ce projet. Vous pouvez nous aider à soutenir Nimiq et tous nos efforts en interagissant avec nous sur <a class="markup--anchor markup--p-anchor" href="http://Twitter" target="_blank" rel="noopener noreferrer" data-href="http://Twitter">Twitter</a> et <a class="markup--anchor markup--p-anchor" href="http://YouTube" target="_blank" rel="noopener noreferrer" data-href="http://YouTube">YouTube</a>, et n’oubliez pas de le dire à vos amis !</p>
+<p class="graf graf--p"><strong class="markup--strong markup--p-strong">Pura Vida !</strong></p>
+<p class="graf graf--p"><strong class="markup--strong markup--p-strong">Team Nimiq</strong></p>

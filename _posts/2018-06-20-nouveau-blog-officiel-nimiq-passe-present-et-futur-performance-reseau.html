@@ -1,0 +1,68 @@
+---
+layout: post
+title: 'Nouveau blog officiel : Nimiq - Passé, présent et futur - Performances réseau'
+date: 2018-06-20 11:19:31.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Non classé
+tags: []
+meta:
+  _publicize_twitter_user: "@Nimiq_France"
+  _thumbnail_id: '1279'
+  _wpas_done_all: '1'
+  advanced_seo_description: 'Nouveau blog officiel : Nimiq - Passé, présent et futur
+    - Performance réseau'
+  tc-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1279";s:11:"_thumb_type";s:5:"thumb";}
+  _oembed_14c0879aeaa70444bb6e1d25dbe59719: '<blockquote class="twitter-tweet" data-width="550"
+    data-dnt="true"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/LATOKEN?src=hash&amp;ref_src=twsrc%5Etfw">#LATOKEN</a>
+    lists <a href="https://twitter.com/nimiq?ref_src=twsrc%5Etfw">@nimiq</a>. Follow
+    the link to trade NIM/ETH and NIM/LA: <a href="https://t.co/2360zpecdg">https://t.co/2360zpecdg</a><a
+    href="https://twitter.com/hashtag/Nimiq?src=hash&amp;ref_src=twsrc%5Etfw">#Nimiq</a>
+    is making blockchain technology as accessible as the internet. They pursue to
+    become the worlds best performing and easiest-to-use decentralized payment protocol
+    &amp; ecosystem. <a href="https://t.co/oso0VPCWpu">pic.twitter.com/oso0VPCWpu</a></p>&mdash;
+    LATOKEN (@LATokens) <a href="https://twitter.com/LATokens/status/1012338659272675328?ref_src=twsrc%5Etfw">June
+    28, 2018</a></blockquote><script async src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script>'
+  _oembed_time_14c0879aeaa70444bb6e1d25dbe59719: '1530353154'
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: ''
+  layout_key: ''
+  post_slider_check_key: '0'
+  fpu-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1279";s:11:"_thumb_type";s:5:"thumb";}
+  _yoast_wpseo_content_score: '30'
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2018/06/20/nouveau-blog-officiel-nimiq-passe-present-et-futur-performance-reseau/"
+---
+<p><em>Ci-dessous une traduction du nouvel article officiel trouvable&nbsp;<a href="https://medium.com/nimiq-network/nimiq-past-present-future-f87e4d720afe">ici</a>.</em></p>
+<p>En observant la blockchain en situation réelle nous avons identifié et commencé à travailler sur un certain nombre d'aspects du protocole Nimiq pour le rendre plus solide et plus résilient. Les objectifs les plus important à l'heure actuelles sont :</p>
+<ul>
+<li>Réduire à la fois la dépendance au DNS et les tracas lié à la mise en place d'un certificat.</li>
+<li>Optimisation des performances des "full nodes".</li>
+<li>Permettre à la communauté de mettre en place ses propres "seed nodes"</li>
+</ul>
+<h2>DNS et certificats</h2>
+<p>Dans la version actuelle du protocole Nimiq, les certificats TLS sont requis comme passerelles pour les navigateurs web. Ceci est dû à deux restrictions dans les navigateurs :</p>
+<ol>
+<li>Tout d'abord, certaines des API que nous utilisons pour Nimiq exigent que le contenu soit servi par HTTPS. Deuxièmement, lorsqu'une page Web est livrée par le biais d'une connexion sécurisée, seules les connexions WebSocket sécurisées sont autorisées - ce qui nécessite un certificat du côté des "backbone nodes".</li>
+<li>La mise en place d'un certificat peut parfois être un problème et a conduit de nombreux participants du réseau Nimiq à faire tourner leurs nodes en mode "dumb", c'est-à-dire sans certificats. Mais les "dumb nodes" ont un inconvénient : ils peuvent se connecter à tous les autres nœuds non "dumb" du réseau, les autres nodes du réseau ne peuvent pas se connecter à un "dumb node". Cela a conduit à une charge accrue sur les "backbone nodes" qui ont un certificat installé - car ceux-ci deviennent les hubs à la fois de tous les "browser nodes" et de tous les "dumb nodes". Cette situation va à l'encontre des ambitions de Nimiq en matière de décentralisation. Heureusement nous avons mis au point de multiples façons de régler ce problème et nous avons déjà commencé à mettre en œuvre des solutions :</li>
+</ol>
+<p>Les nodes du réseau de base ne devraient pas avoir besoin de certificats, mais plutôt communiquer entre eux via la connectivité TCP/WS si aucun certificat n'est fourni. Nous testons actuellement cette nouvelle fonctionnalité sur le Testnet de Nimiq.<br />
+Nous travaillons également à fournir un script d'installation qui choisira automatiquement la configuration la plus appropriée pour votre noeud et vous guidera à travers les étapes nécessaires (comme l'ouverture des ports dans un pare-feu). Cela inclut également la création d'un certificat TLS dans la plupart des cas, supportant un ponte entre les "browser nodes" et les "backbone nodes".<br />
+Dès que cette procédure automatique fonctionne de manière fiable, nous envisageons d'ajouter une fonction pour les nodes afin de filtrer les connexions des "dumb nodes" - dans le but de décourager leur utilisation - tout en prenant en charge les configurations "dumb" dans des situations qui ne le permettent pas autrement.</p>
+<h2>Optimisation des performances</h2>
+<p>Une étape essentielle pour assurer la sécurité du réseau est la dispersion de la puissanc de minage. Pour cette raison, nous voulons fournir la version la plus performante du protocole Nimiq en Open Source à la communauté pour s'assurer que tout le monde a une chance égale de participer. Pour améliorer encore les performances du réseau et du minage, nous prévoyons de réécrire l'implémentation basée sur Node.js en utilisant Rust - un langage idéal du point de vue de la performance et de la sécurité. De plus, Rust peut être compilé en WebAssembly et fonctionne donc de manière très efficace dans le navigateur. Cette implémentation sera développée parallèlement à la version JavaScript et est destinée aux situations où la performance est primordiale, tandis que l'implémentation de Node.js peut toujours être utilisée pour construire des applications supplémentaires sur Nimiq en utilisant la plate-forme populaire et JavaScript.</p>
+<p>Une fois que nous aurons atteint une compatibilité et une intégration transparente de la base de donnée Rust dans les navigateurs via WebAssembly, nous avons l'intention de fournir cette amélioration de performance potentiellement énorme en tant que mise à jour des plates-formes et environnements basés sur JavaScript.</p>
+<h2>"Seed nodes" communautaires</h2>
+<p>Récemment, le réseau Nimiq a connu une charge inattendue sur les huit "seed nodes" initialement fournis et entretenus par l'équipe Nimiq. Comme mesure immédiate pour atténuer le problème, nous travaillons à augmenter le nombre de "seed nodes".</p>
+<p>Pour augmenter la croissance du réseau, nous recherchons les meilleures solution qui donneraient à la communauté la capacité d'exploiter des "seed nodes" tout en veillant à ce que la qualité et la sécurité du réseau restent aussi élevées que possible. Les membres de la communauté ont déjà montré leur intérêt à soutenir le réseau Nimiq en fournissant des "seed nodes" et les premiers essais sont en cours sur l'intégration de ces nodes communautaires. Nous espérons être bientôt en mesure d'annoncer une solution adéquate et transparente qui permettra la mise en place d'un "seed node" communautaire.</p>
+<p>&nbsp;</p>

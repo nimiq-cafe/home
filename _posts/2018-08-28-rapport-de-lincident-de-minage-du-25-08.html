@@ -1,0 +1,56 @@
+---
+layout: post
+title: Rapport de l'incident de minage du 25/08
+date: 2018-08-28 07:17:34.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Non classé
+tags: []
+meta:
+  _wpas_done_all: '1'
+  tc-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1392";s:11:"_thumb_type";s:5:"thumb";}
+  _thumbnail_id: '1392'
+  _publicize_twitter_user: "@Nimiq_France"
+  _edit_last: '1'
+  _yoast_wpseo_primary_category: ''
+  layout_key: ''
+  post_slider_check_key: '0'
+  fpu-thumb-fld: a:2:{s:9:"_thumb_id";s:4:"1392";s:11:"_thumb_type";s:5:"thumb";}
+  _yoast_wpseo_content_score: '30'
+  _heateor_sss_meta: a:2:{s:7:"sharing";i:0;s:16:"vertical_sharing";i:0;}
+author:
+  login: armandjeanduplessisderichelieu@protonmail.com
+  email: admin@nimiq.cafe
+  display_name: Nimiq Café
+  first_name: ''
+  last_name: ''
+permalink: "/2018/08/28/rapport-de-lincident-de-minage-du-25-08/"
+---
+<p><em>Ci-dessous la traduction du <a href="https://medium.com/nimiq-network/august-25-mining-stop-8b6edec12980">billet officiel</a> rédigé par l'équipe de développement.</em></p>
+<p>Le 25 août 2018 en fin de soirée (UTC), le réseau Nimiq a connu une courte période sans nouveaux blocs produits après le bloc #191361 en raison d'une erreur dans la fonction de "pruning" du code du mineur, ce qui a empêché les mineurs de générer de nouveaux blocs valides. La blockchain elle-même n'a pas été affectée et a continuée après qu'un correctif ait été déployé sans risque de "fork".</p>
+<p>Ce qui suit est une explication détaillée des événements. Il s'agit d'un poste purement technique, car la situation exige de la clarté.</p>
+<h3>Ce qui s'est passé</h3>
+<p>La blockchain Nimiq stocke tous les soldes de comptes non nuls dans un arbre de Merkle, appelé arbre des comptes. Pour garder cette base de données de comptes aussi petite que possible (elle est synchronisée et stockée par les "full nodes" et "light nodes"), les comptes qui transfèrent tout leur hors de celui-ci sont retirés de la base de donnée après que les transaction aient été traitées. Cette suppression des comptes à solde nul est appelée "pruning" (élagage) et est effectuée automatiquement par tous les mineurs lors du traitement des transactions.</p>
+<p>Le problème s'est produit lorsque la même adresse avait deux transactions sortantes (d'envoi) en attente de traitement en même temps (dans le mempool), et que la deuxième de ces transactions vidait le compte à un solde de zéro.</p>
+<p>Lors de la création d'un nouveau bloc, les transactions qui seront incluses dans ce bloc sont appliquées virtuellement à l'état actuel de la blockchain par le mineur. Le solde final résultant pour l'expéditeur des deux transactions était nul. Ainsi, l'adresse de l'expéditeur a été ajoutée deux fois à la liste des comptes élagués (la cause étant qu'il n'y avait aucune vérification pour empêcher qu'une adresse soit ajoutée plus d'une fois). Cette liste de comptes à élaguer a ensuite été répétée lors de la validation du nouveau bloc assemblé immédiatement avant de commencer à l'exploiter. Au cours de cette itération, les comptes élagués sont retirés de la liste susmentionnée. Une exception est levée lorsqu'à la fin de l'itération, les adresses sont restées dans la liste. Comme l'adresse de l'expéditeur a été ajoutée deux fois au début, mais n'a été supprimée qu'une seule fois, cette condition était vraie et empêchait que le bloc soit accepté et, par conséquent, arrêtait le travail des mineurs.</p>
+<p>A ce stade, nous pensons que - bien que le premier déclenchement du bug ait pu être un accident - la création ultérieure de telles transactions constituait une attaque intentionnelle contre le réseau Nimiq.</p>
+<p>Après avoir déclenché le bug pour la première fois, l'attaquant a ensuite automatisé la création de telles transactions.</p>
+<h2>Chronologie des événements (UTC)</h2>
+<p>19:13 - Le bloc #191361 est miné.</p>
+<p>19:31 - Nous recevons une alerte de notre système automatisé de surveillance de la blockchain au sujet de quelques blocs dans les 20 dernières minutes. Après avoir vérifié les différents explorateurs de blocs de Nimiq, nous constatons qu'aucun bloc n'a été ajouté à la chaîne au cours des 18 dernières minutes. L'extraction de blocs est un processus statistique et des écarts entre les blocs de quelques minutes peuvent parfois se produire, mais 18 minutes est un temps très long sans blocs, alors nous commençons à enquêter. En vérifiant nos canaux Télégramme et Discorde, nous recevons les premiers rapports d'un problème avec les mineurs et leurs messages d'erreur. La vérification de nos pools gérées par des membres de l'équipe montre un hashrate de 0 H/s avec beaucoup d'appareils connectés. A ce moment-là, il devient évident que la blockchain est coincée parce que les mineurs ne peuvent pas assembler de nouveaux blocs. Nous enquêtons sur les derniers blocs minés à la recherche de transactions notables et nous explorons comment l'erreur que les mineurs voient peut être expliquée.</p>
+<p>20:24 - Nous identifions le problème et commençons à appliquer et à tester divers correctifs potentiels sur nos serveurs miniers.</p>
+<p>20:35 - Un correctif rapide fonctionnel est trouvé et partagé à l'interne pour d'autres tests.</p>
+<p>20:42 - Nous commettons le correctif dans le référentiel GitHub sous la branche "jeff/miner_fix". Nous testons intensément le correctif sur notre propre pools.</p>
+<p>21:07 - Les premiers membres de la communauté remarquent la branche GitHub avec le correctif et le déploient sur leurs propres mineurs.</p>
+<p>21:26 - Un nouveau bloc (#191362) est miné par nimpool.io, traitant toutes les transactions en attente et brisant l'impasse pour tous les mineurs, permettant ainsi à la chaîne de blocs de continuer régulièrement, bien qu'avec une difficulté très réduite.</p>
+<p>21:35 - Le même combo de transactions déclencheur de bugs est de nouveau poussé vers le mempool (après le bloc #191383), empêchant tous les mineurs non mis à jour de créer des blocs valides. Seuls les mineurs patchés travaillent maintenant. Le prochain bloc valide est miné après 63 minutes.</p>
+<p>21:51 - Beepool's @Blub publie la mise à jour de son client minier avec le correctif.</p>
+<p>22:29 - SushiPool pousse un client mis à jour qui contient le correctif.</p>
+<p>22:30 - Tout au long de la nuit, il y a encore quelques courtes pauses dans l'exploitation minière, car seul un sous-ensemble croissant de mineurs est mis à jour avec le correctif.</p>
+<p>01:34 - Skypool annonce qu'il a également déployé le correctif.</p>
+<p>02:30 - Nous fusionnons le correctif à la branche maître et le publions en tant que version 1.3.1. Il est maintenant officiellement publié comme stable et annoncé à la communauté.</p>
+<p>Nous nous excusons pour tout inconvénient qui a pu se produire en raison de ce bug complexe. Nous sommes cependant heureux d'informer que le correctif est maintenant dans la dernière version de @nimiq/core et nous demandons instamment à tous les utilisateurs de mettre à jour vers la nouvelle version v1.3.1.1.</p>
